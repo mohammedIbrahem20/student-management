@@ -36,6 +36,11 @@ public class CourseServiceImpl implements CourseService {
 	private StudentService studentService;
 
 	@Override
+	public void addCours(Course entity) {
+		courseRepository.save(entity);
+	}
+	
+	@Override
 	@Cacheable(value = "courses")
 	public List<Course> getAllCourses() {
 		return courseRepository.findAll();
@@ -113,4 +118,5 @@ public class CourseServiceImpl implements CourseService {
 	private List<CourseRegistration> getCoursesRegistrationByCourseId(Long courseId){
 		return registrationRepository.findByCourseId(courseId);
 	}
+
 }

@@ -11,6 +11,7 @@ import net.sf.jasperreports.engine.JRException;
 
 public interface CourseService {
 
+	public void addCours(Course entity);
 	public List<Course> getAllCourses();
 
 	public ResponseEntity<String> registerUserToCourse(Long courseId, Long userId);
